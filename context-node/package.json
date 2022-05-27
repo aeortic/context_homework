@@ -40,7 +40,8 @@
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6",
     "twilio": "^3.54.1",
-    "uuid-validate": "0.0.3"
+    "uuid-validate": "0.0.3",
+    "customize-cra": "^1.0.0"
   },
   "resolutions": {
     "lodash.merge": "^4.6.2",
