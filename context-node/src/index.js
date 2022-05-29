@@ -3,6 +3,8 @@
 import express from 'express'
 import ash from 'express-async-handler'
 
+import { readFile } from 'node:fs';
+
 export const app = express();
 
 app.use(express.json());
@@ -20,3 +22,17 @@ app.get('/healthcheck', ash(async(req, res) => {
   const status = {"status":"OK"};
   res.send(status);
 }));
+
+
+app.get('/client_list', ash(async(req, res) => {
+
+  // typically, such things would come from a database in a real implementation. 
+  readFile('./clients.json', (err, source) => {
+    if (err) {
+      console.log(err);
+    } else {
+      const json = JSON.parse(source)
+      res.send(json)
+    }
+  });
+}))
