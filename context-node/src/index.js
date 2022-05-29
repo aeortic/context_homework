@@ -2,12 +2,21 @@
 
 import express from 'express'
 import ash from 'express-async-handler'
+import cors from 'cors'
 
 import { readFile } from 'node:fs';
 
 export const app = express();
 
 app.use(express.json());
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  next();
+});
+
+app.use(cors())
 
 /**
  * @openapi

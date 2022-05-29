@@ -11,18 +11,21 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
+    "axios": "^0.27.2",
+    "axios-mock-adapter": "^1.20.0",
+    "customize-cra": "^1.0.0",
     "eslint-plugin-jest": "^26.1.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-only-warn": "^1.0.2",
-    "axios": "^0.21.1",
-    "axios-mock-adapter": "^1.20.0",
-    "react-app-rewired": "^2.1.8", 
-    "customize-cra": "^1.0.0",
-    "less-loader": "^10.2.0"
+    "less-loader": "^10.2.0",
+    "react": "^18.1.0",
+    "react-app-rewired": "^2.1.8",
+    "react-dom": "^18.1.0",
+    "react-redux": "^8.0.2",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,8 +37,11 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "airbnb",
+      "airbnb/hooks"
+    ],
+    "plugins": [
+      "react"
     ]
   },
   "browserslist": {
@@ -50,17 +56,9 @@
       "last 1 safari version"
     ]
   },
-  "eslintConfig": {
-    "extends": [
-      "airbnb",
-      "airbnb/hooks"
-    ],
-    "plugins": [
-      "react"
-    ]
-  },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
+    "babel-plugin-module-resolver": "^4.1.0",
     "prettier": "2.2.1"
   },
   "prettier": {
