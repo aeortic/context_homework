@@ -3,8 +3,7 @@
 import express from 'express'
 import ash from 'express-async-handler'
 
-import Clients from './clients.json' assert {type: 'json'}
-// import { readFile } from 'fs';
+import { readFile } from 'node:fs';
 
 export const app = express();
 
@@ -27,14 +26,13 @@ app.get('/healthcheck', ash(async(req, res) => {
 
 app.get('/client_list', ash(async(req, res) => {
 
-  res.send(Clients)
   // typically, such things would come from a database in a real implementation. 
-  // readFile('./clients.json', (err, source) => {
-  //   if (err) {
-  //     console.log(err);
-  //   } else {
-  //     const json = JSON.parse(source)
-  //     res.send(json)
-  //   }
-  // });
+  readFile('./clients.json', (err, source) => {
+    if (err) {
+      console.log(err);
+    } else {
+      const json = JSON.parse(source)
+      res.send(json)
+    }
+  });
 }))
