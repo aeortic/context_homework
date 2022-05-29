@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import parse from 'html-react-parser'
 import ClientDetailDialog from './ClientDetailDialog'
 import './ClientSummary.css';
 
@@ -21,7 +22,7 @@ export default function ClientSummary({client}) {
           <img src={avatar} />
         </div>
         <div className="ClientSummary-name">
-          {name}
+          {parse(name)}
         </div>
         <div className="ClientSummary-title">
           {title}

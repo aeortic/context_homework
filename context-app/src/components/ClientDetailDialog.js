@@ -1,4 +1,5 @@
 import React from 'react'
+import parse from 'html-react-parser'
 
 import Title from '../components/DesignSystems/Text/Title'
 import Dialog, {Header, Body, Footer} from '../components/DesignSystems/Dialog/Dialog';
@@ -19,7 +20,7 @@ export default function ClientDetailDialog({
   return (
     <Dialog onClose={onClose}>
       <Header>
-        <Title>{name}</Title>
+        <Title>{parse(name)}</Title>
         <CloseButton onClick={onClose} />
       </Header>
       <Body>
