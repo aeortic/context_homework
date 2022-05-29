@@ -1,0 +1,8 @@
+.ClientList ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.ClientList li {
+  padding: 10px;
+}

@@ -1,0 +1,7 @@
+.ClientDetailDialog-detailContainer {
+  display: flex;
+}
+
+.ClientDetailDialog-details {
+  align-self: flex-end;
+}
