@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+import Title from './components/DesignSystems/Text/Title'
+import ClientList from './components/ClientList'
 import './App.css';
 
 import {loadClientList} from './actions/clientActions'
-
-function App() {
+export default function App() {
 
   const clientList = useSelector(state => {
-    console.log(state)
     return state.clients.clientList || []
   })
 
@@ -19,18 +19,12 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        Client List
-      </header>
-      <ul>{clientList.map(client => (
-        <li key={`client-${client.name}`}>
-          {
-            JSON.stringify(client, null, 2)
-          }
-        </li>
-      ))}</ul>
+      <div className="App-header">
+        <Title>
+          Client List
+        </Title>
+      </div>
+      <ClientList clientList={clientList} />
     </div>
   );
 }
-
-export default App;

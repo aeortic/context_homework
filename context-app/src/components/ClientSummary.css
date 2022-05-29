@@ -1,0 +1,12 @@
+.ClientSummary:hover {
+  background-color: lightGrey;
+}
+
+.ClientSummary-name {
+  font-size: 18px;
+}
+
+.ClientSummary-avatar img{
+  height: 40px;
+  width: 40px;
+}
