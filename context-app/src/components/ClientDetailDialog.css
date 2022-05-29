@@ -1,5 +1,6 @@
 .ClientDetailDialog-detailContainer {
   display: flex;
+  justify-content: center;
 }
 
 .ClientDetailDialog-details {
