@@ -35,12 +35,12 @@ export default function Filter({
   }, [filterText])
 
   return (
-    <>
-      <span>{`${label}: `}</span>
+    <label>
       <input
         value={filterText}
         onChange={(element) => setFilterText(element.target.value)}
       />
-    </>
+      {`${label}: `}
+    </label>
   )
 }
