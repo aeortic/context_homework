@@ -21,11 +21,14 @@ export function Footer({children}) {
   )
 }
 
-export default function Dialog({className, children, onClose, isExpanded}) {
+export default function Dialog({className, children, onClose, isExpanded, modalClickMessage}) {
 
   const modalClickHandler = (onClose) => {
     return (event) => {
-      if(window.confirm("Cancel and close this dialog? Data will not be saved."))
+      if(window.confirm(
+          modalClickMessage 
+          || "Cancel and close this dialog? Data will not be saved."
+        ))
       {
         if(!event.isPropagationStopped()) {
           onClose()

@@ -7,8 +7,6 @@ export default function ClientList({clientList}) {
 
   const [filteredClientList, setFilteredClientList] = useState([])
 
-  const [filterText, setFilterText] = useState("")
-
   useEffect(() => {
     if (clientList) {
       setFilteredClientList(clientList)
