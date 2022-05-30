@@ -24,18 +24,10 @@ export default function Filter({
       const testFilteredList = unfilteredList.filter((object) => {
         const keys = Object.keys(object) || []
 
-        return keys.reduce((acc, item) => {
-
-          if (object[item] 
+        return !!keys.find((item) => object[item] 
             && typeof object[item] === "string"
-            && -1 !== object[item].toLowerCase().search(filterText.toLowerCase())) 
-          {
-            return 1
-            
-          } else {
-            return acc
-          }
-        }, 0)
+            && -1 !== object[item].toLowerCase().search(filterText.toLowerCase())
+        )
       })
 
       onChange(testFilteredList)
