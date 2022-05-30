@@ -34,9 +34,6 @@
   margin-bottom: 8px;
 }
 
-.dialogBody  .mapboxgl-ctrl-icon {
-}
-
 .dialogFooter {
   display: flex;
   justify-content: left;
@@ -52,40 +49,4 @@
   margin-bottom: 16px;
   display: flex;
   justify-content: space-between;
-}
-
-.dialog-form-input-title {
-  margin: 8px 0px 8px 0;
-  font-weight: bold;
-}
-
-.dialog-form-input-subtitle {
-  margin: 0px 0px 0px 0;
-}
-
-.dialog-form-input {
-  margin: 0px 0 8px 0;
-}
-
-.dialog-form-input h3,h4 {
-  margin-top: 16px;
-  margin-bottom: 8px;
-}
-
-.dialog-form-input input[type="checkbox"] {
-  display:  none;
-}
-
-.dialog-form-input input {
-  width: 400px;
-}
-
-
-.dialogExpanded {
-  width: 90%;
-}
-
-.dialog-subtitle {
-  margin: 0 0 32px 0;
-  font-weight: bold;
 }
