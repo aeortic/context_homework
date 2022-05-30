@@ -1,0 +1,10 @@
+.closeButton {
+  cursor: pointer;
+  height: 2em;
+  width: 2em;
+}
+
+.closeButton--size_14 {
+  height: 1em;
+  width: 1em;
+}

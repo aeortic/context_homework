@@ -2,7 +2,7 @@ import React from 'react'
 import parse from 'html-react-parser'
 
 import Title from '../components/DesignSystems/Text/Title'
-import Dialog, {Header, Body, Footer} from '../components/DesignSystems/Dialog/Dialog';
+import Dialog, {Header, Body} from '../components/DesignSystems/Dialog/Dialog';
 import CloseButton from '../components/DesignSystems/Buttons/CloseButton'
 import './ClientDetailDialog.css'
 
@@ -18,7 +18,10 @@ export default function ClientDetailDialog({
 }) {
 
   return (
-    <Dialog onClose={onClose}>
+    <Dialog 
+      onClose={onClose}
+      modalClickMessage="Do you want to close this dialog?"
+    >
       <Header>
         <Title>{parse(name)}</Title>
         <CloseButton onClick={onClose} />

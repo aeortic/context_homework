@@ -1,3 +1,7 @@
+.ClientSummary {
+  cursor: pointer;
+}
+
 .ClientSummary:hover {
   background-color: lightGrey;
 }

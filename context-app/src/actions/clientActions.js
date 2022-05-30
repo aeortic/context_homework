@@ -25,6 +25,10 @@ const loadClientListSuccess = (clientList) => {
 const loadClientListError = (error) => {
   // display an error to the user
   window.alert("The list of clients could not be fetched.\n\nReload the page to try again. If you continue to experience this error, contact the administrator at seminative@gmail.com")
+  return {
+    type: LOAD_CLIENT_LIST_ERROR,
+    payload: error
+  }
 }
 
 export const loadClientList = () => {
