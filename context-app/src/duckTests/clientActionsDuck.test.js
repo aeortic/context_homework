@@ -2,14 +2,17 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import MockAdapter from 'axios-mock-adapter'
 import axios from 'axios'
+
 import {
   loadClientList
-} from './clientActions'
+} from '../actions/clientActions'
+
+import combinedReducer from '../reducers/combinedReducer'
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const store = mockStore({
-  client: {
+  clients: {
     clientList: []
   }
 })
@@ -22,6 +25,7 @@ describe('Testing loadClientList', () => {
     store.clearActions()
     mock.reset()
     window.alert = jest.fn()
+
   })
 
   afterEach(() => {
@@ -36,6 +40,11 @@ describe('Testing loadClientList', () => {
     mock.onGet("http://localhost:3001/client_list").reply(200, testResponse)
 
     await store.dispatch(loadClientList())
-    expect(store.getActions()).toEqual("your mom")
+
+    const finalState = store.getActions().reduce((acc, item) => {
+      return combinedReducer(acc, item)
+    }, store.getState())
+
+    expect(finalState).toEqual({clients: {clientList: testResponse}})
   })
 })
