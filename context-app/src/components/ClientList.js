@@ -3,7 +3,7 @@ import ClientSummary from './ClientSummary'
 import Filter from './Filter'
 import './ClientList.css';
 
-export default function ClientList({clientList}) {
+export default function ClientList({clientList = []}) {
 
   const [filteredClientList, setFilteredClientList] = useState([])
 
