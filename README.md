@@ -3,10 +3,12 @@ Practice setting up a project with a simple UX
 
 ## Running the server
 - go to the /context-node directory
+- run `yarn`
 - run `yarn dev`
 
 ## Running the SPA
 - go to the /context-app directory
+- run `yarn`
 - run `yarn dev`
 
 ## Task
